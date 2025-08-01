@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tienda online con productos variados y carrito de compras" />
+  <title>E-commerce Final</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    #productos .card {
+      height: 100%;
+    }
+
+    #lista-productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    #carrito-btn {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="bg-dark text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark container">
+      <a class="navbar-brand" href="#">Tienda Online</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+        aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#productos">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reseñas">Reseñas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+        <a href="carrito.html" id="carrito-btn" class="btn btn-outline-light position-relative">
+          🛒 Carrito
+          <span id="contador" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <section id="inicio" class="mb-5">
+      <h2>Bienvenido a la Tienda</h2>
+      <p>Explorá nuestros productos y agregalos al carrito.</p>
+    </section>
+
+    <section id="productos" class="mb-5">
+      <h2 class="mb-3">Productos</h2>
+      <div id="lista-productos"></div>
+    </section>
+
+    <section id="reseñas" class="mb-5">
+      <h2>Reseñas</h2>
+      <div class="reseñas-grid">
+        <!-- Reseñas con Grid (pendiente si querés agregar alguna fija) -->
+      </div>
+    </section>
+
+    <section id="contacto" class="mb-5">
+      <h2>Contacto</h2>
+      <form action="https://formspree.io/f/tuformid" method="POST" id="form-contacto" class="d-flex flex-column gap-3">
+        <input type="text" name="nombre" placeholder="Nombre" required class="form-control" />
+        <input type="email" name="email" placeholder="Correo" required class="form-control" />
+        <textarea name="mensaje" placeholder="Mensaje" required class="form-control"></textarea>
+        <button type="submit" class="btn btn-primary align-self-start">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center p-3">
+    <p>&copy; 2025 - E-commerce TP Final</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
