@@ -24,7 +24,7 @@ function mostrarProductos(productos) {
   productosContainer.innerHTML = ""; // Limpia antes de agregar
   productos.forEach(prod => {
     const card = document.createElement("div");
-    card.className = "col-12 col-md-6 col-lg-4"; // Clases responsive de Bootstrap
+    card.className = "";
     card.innerHTML = `
       <div class="card h-100">
         <img src="${prod.images[0]}" class="card-img-top" alt="${prod.title}">
