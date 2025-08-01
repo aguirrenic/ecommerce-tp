@@ -49,3 +49,18 @@ function actualizarContador() {
 function escapeQuotes(str) {
   return str.replace(/'/g, "\\'");
 }
+
+
+// Cargar reseñas desde resenas.html y ponerlas dentro del div .reseñas-grid
+fetch('resenas.html')
+  .then(response => response.text())
+  .then(html => {
+    // Crear un elemento temporal para extraer solo el contenido de .reseñas-grid
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = html;
+    const reseñasContenido = tempDiv.querySelector('.reseñas-grid').innerHTML;
+    
+    // Insertar en el index.html
+    document.querySelector('.reseñas-grid').innerHTML = reseñasContenido;
+  })
+  .catch(error => console.error('Error cargando reseñas:', error));

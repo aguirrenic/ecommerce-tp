@@ -30,7 +30,9 @@ nav a {
 }
 
 .card {
-  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .reseñas-grid {
