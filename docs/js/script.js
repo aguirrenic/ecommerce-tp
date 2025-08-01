@@ -64,3 +64,18 @@ fetch('resenas.html')
     document.querySelector('.reseñas-grid').innerHTML = reseñasContenido;
   })
   .catch(error => console.error('Error cargando reseñas:', error));
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+  const forms = document.querySelectorAll('.contact-form');
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    });
+  });
+});
